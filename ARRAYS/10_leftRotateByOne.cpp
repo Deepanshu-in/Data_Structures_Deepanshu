@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void leftRotate(int arr[], int n)
+void lefttRotate(int arr[], int n)
 {
     int temp = arr[0];
     for (int i = 1; i < n; i++)
@@ -12,7 +12,7 @@ void leftRotate(int arr[], int n)
 int main()
 {
     int arr[5] = {1, 2, 3, 4, 5};
-    leftRotate(arr, 5);
+    lefttRotate(arr, 5);
 
     for (int i = 0; i < 5; i++)
     {
