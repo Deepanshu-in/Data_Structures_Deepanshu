@@ -16,6 +16,7 @@ void firstOcc(int arr[], int n, int x)
 }
 */
 
+// Binary recursive solution
 int firstOcc(int arr[], int low, int high, int x)
 {
     if (low > high)
@@ -34,6 +35,7 @@ int firstOcc(int arr[], int low, int high, int x)
             return firstOcc(arr, low, mid - 1, x);
     }
 }
+
 int main()
 {
     int arr[5] = {1, 1, 2, 2, 4};
