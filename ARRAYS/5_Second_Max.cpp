@@ -1,30 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int secMax(int arr[], int n)
+int secMax(int a[], int n)
 {
-    int res = -1, largest = 0;
-    for (int i = 0; i < n; i++)
+    int largest = 0;
+    int res = -1;
+
+    for (int i = 1; i < n; i++)
     {
-        if (arr[i] > largest)
+        if (a[i] > a[largest])
         {
             res = largest;
             largest = i;
         }
-        else if (arr[i] != arr[largest])
+        else if (a[i] != a[largest])
         {
-            if (res == -1 || arr[i] > arr[res])
-            {
+            if (res == -1 || a[i] > a[res])
                 res = i;
-            }
         }
     }
     return res;
 }
-
 int main()
 {
-    int arr[5] = {1, 2, 90, 38, 5};
+    int arr[5] = {10, 10, 10, 10, 10};
     int j = secMax(arr, 5);
     cout << "Second largest element is at index :- " << j;
     return 0;
