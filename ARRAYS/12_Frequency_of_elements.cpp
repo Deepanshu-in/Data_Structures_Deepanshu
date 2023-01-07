@@ -1,24 +1,30 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-void frequency(int arr[], int n)
+int maxConsecutiveOnes(int arr[], int n)
 {
-    int cnt = 1;
-    int temp[n];
+    int res = 0, curr = 0;
+
     for (int i = 0; i < n; i++)
     {
-        for (int j = 1; j < n; j++)
+        if (arr[i] == 0)
+            curr = 0;
+        else
         {
-            if (arr[i++] == arr[j++])
-                cnt++;
-            else
-                break;
+            curr++;
+
+            res = max(res, curr);
         }
     }
+
+    return res;
 }
+
 int main()
 {
-    int arr[5] = {1, 2, 2, 4, 2};
 
-    return 0;
+    int arr[] = {0, 1, 1, 0, 1, 1, 1}, n = 7;
+
+    cout << maxConsecutiveOnes(arr, n);
 }
