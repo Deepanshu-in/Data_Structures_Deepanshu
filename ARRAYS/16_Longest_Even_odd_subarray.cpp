@@ -23,6 +23,5 @@ int main()
     int arr[6] = {5, 10, 20, 6, 3, 8};
     int j = longestEvenOdd(arr, 6);
     cout << j;
-
     return 0;
 }
