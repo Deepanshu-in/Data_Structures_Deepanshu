@@ -8,17 +8,28 @@ struct Node
     Node(int x)
     {
         data = x;
-        prev = next = NULL;
+        prev = NULL;
+        next = NULL;
     }
 };
-
-Node *insertAtBegin(Node *head, int x)
+Node *delTail(Node *head)
 {
-    Node *temp = new Node(x);
-    temp->next = head;
-    if (head != NULL)
-        head->prev = temp;
-    return temp;
+    if (head == NULL)
+        return NULL;
+    if (head->next == NULL)
+    {
+        delete head;
+        return NULL;
+    }
+    else
+    {
+        Node *curr = head;
+        while (curr->next != NULL)
+            curr = curr->next;
+        curr->prev->next = NULL;
+        delete curr;
+        return head;
+    }
 }
 void printLL(Node *head)
 {
@@ -39,7 +50,11 @@ int main()
     temp1->prev = head;
     temp1->next = temp2;
     temp2->prev = temp1;
-    head = insertAtBegin(head, 5);
     printLL(head);
+
+    head = delTail(head);
+
+    printLL(head);
+
     return 0;
 }

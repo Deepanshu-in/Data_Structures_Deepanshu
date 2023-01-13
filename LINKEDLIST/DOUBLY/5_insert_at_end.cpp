@@ -12,13 +12,17 @@ struct Node
     }
 };
 
-Node *insertAtBegin(Node *head, int x)
+Node *insertAtEnd(Node *head, int x)
 {
     Node *temp = new Node(x);
-    temp->next = head;
-    if (head != NULL)
-        head->prev = temp;
-    return temp;
+    if (head == NULL)
+        return temp;
+    Node *curr = head;
+    while (curr->next != NULL)
+        curr = curr->next;
+    curr->next = temp;
+    temp->prev = curr;
+    return head;
 }
 void printLL(Node *head)
 {
@@ -39,7 +43,7 @@ int main()
     temp1->prev = head;
     temp1->next = temp2;
     temp2->prev = temp1;
-    head = insertAtBegin(head, 5);
+    head = insertAtEnd(head, 5);
     printLL(head);
     return 0;
 }

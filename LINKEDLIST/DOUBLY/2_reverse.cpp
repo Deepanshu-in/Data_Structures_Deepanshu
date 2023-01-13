@@ -12,6 +12,22 @@ struct Node
     }
 };
 
+Node *reverse(Node *head)
+{
+    if (head == NULL || head->next == NULL)
+        return head;
+    Node *prev = NULL;
+    Node *curr = head;
+    while (curr != NULL)
+    {
+        prev = curr->prev;
+        curr->prev = curr->next;
+        curr->next = prev;
+        curr = curr->prev;
+    }
+    return prev->prev;
+}
+
 Node *insertAtBegin(Node *head, int x)
 {
     Node *temp = new Node(x);
@@ -39,7 +55,8 @@ int main()
     temp1->prev = head;
     temp1->next = temp2;
     temp2->prev = temp1;
-    head = insertAtBegin(head, 5);
+    printLL(head);
+    head = reverse(head);
     printLL(head);
     return 0;
 }
