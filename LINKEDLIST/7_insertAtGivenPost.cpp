@@ -12,28 +12,31 @@ struct Node
         next = NULL;
     }
 };
-Node *deleteAtTail(Node *head)
-{
-    if (head == NULL)
-        return NULL;
-    if (head->next == NULL)
-    {
-        delete (head);
-        return NULL;
-    }
-    Node *curr = head;
-    while (curr->next->next != NULL)
-        curr = curr->next;
-    delete (curr->next);
-    curr->next = NULL;
-    return head;
-}
-
 Node *insert(Node *head, int x)
 {
     Node *temp = new Node(x);
     temp->next = head;
     return temp;
+}
+
+Node *insertAtPos(Node *head, int pos, int x)
+{
+    Node *temp = new Node(x);
+    if (pos == 1)
+    {
+        temp->next == head;
+        return temp;
+    }
+    Node *curr = head;
+    for (int i = 1; i < pos - 2 && curr != NULL; i++)
+        curr = curr->next;
+    if (curr == NULL)
+    {
+        return head;
+    }
+    temp->next = curr->next;
+    curr->next = temp;
+    return head;
 }
 
 void printLL(Node *head)
@@ -52,10 +55,8 @@ int main()
     head = insert(head, 10);
     head = insert(head, 20);
     head = insert(head, 30);
-    cout << "Before delete :- ";
     printLL(head);
-    head = deleteAtTail(head);
-    cout << "After delete :- ";
+    head = insertAtPos(head, 2, 25);
     printLL(head);
 
     return 0;
