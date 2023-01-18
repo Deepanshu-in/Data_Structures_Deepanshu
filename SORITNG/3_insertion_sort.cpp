@@ -32,3 +32,5 @@ int main()
     pritnArr(arr, 5);
     return 0;
 }
+
+
