@@ -20,3 +20,5 @@ int main()
 
     return 0;
 }
+
+// you can also use stl function for better time complexity
