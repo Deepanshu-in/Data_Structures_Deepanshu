@@ -28,7 +28,7 @@ int main()
     root->left->right = new Node(50);
     root->right->left = new Node(60);
     root->right->right = new Node(70);
-
+    //printing output
     int j=maxi(root);
     cout<<j;
 }
