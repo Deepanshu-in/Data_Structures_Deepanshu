@@ -14,7 +14,7 @@ int main()
     {
         cout << x << " ";
     }
-
+    
     // to remove every element after a certain element
     auto it = s.find(40);//it will remove elements after 40
     s.erase(it, s.end());
