@@ -23,7 +23,7 @@ int secMax(int a[], int n)
 }
 int main()
 {
-    int arr[5] = {10, 10, 10, 10, 10};
+    int arr[5] = {5, 399, 885, 5, 222};
     int j = secMax(arr, 5);
     cout << "Second largest element is at index :- " << j;
     return 0;
