@@ -38,7 +38,7 @@ int firstOcc(int arr[], int low, int high, int x)
 
 int main()
 {
-    int arr[5] = {1, 1, 1, 2, 1};
+    int arr[5] = {1, 1, 1, 2};
     int j = firstOcc(arr, 0, 4, 1);
     cout << j;
     return 0;
