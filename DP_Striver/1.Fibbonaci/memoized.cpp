@@ -15,6 +15,7 @@ int solve(int n,vector<int> & arr)
 int main()
 { 
     int n;
+    cout<<"Enter number :"<<endl;
     cin>>n;
     vector<int> arr(n+1,-1);
     cout<<solve(n,arr);
