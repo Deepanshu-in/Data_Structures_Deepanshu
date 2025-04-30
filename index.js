@@ -50,3 +50,12 @@ arr3.push(5);
 arr3 = [1, 23, 4, 5, 9, 8];
 arr3.pop();
 console.log(arr3);
+// Create an Array
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+// Reverse the Array
+// const f = fruits.reverse();
+const fruits2 = fruits.toReversed();
+console.log(fruits2);
+const time = new Date();
+console.log(time);
